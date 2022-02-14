@@ -22,10 +22,10 @@ public class Ejercicio1 {
      */
     public static void main(String[] args) {
         
-        String selection = null;
+        String title = "Cálculo atracción gravitatoria";
         boolean limit = false;
         
-        Calcule calcule = new Calcule();
+        Calculate calculate = new Calculate();
 
         ArrayList<PlanetarySystem> system = new ArrayList<>();
         PlanetarySystem sun = new PlanetarySystem(1.989 * 10E30, 1.41, 1390000, 0, 1, "Sol");
@@ -62,18 +62,21 @@ public class Ejercicio1 {
                 }
 
                 String planet1 = (String) JOptionPane.showInputDialog(null, "Selecciona el primer planeta",
-                        selection, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
+                        title, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
 
                     int indexPlanet1 = Integer.parseInt(planet1.split(". ")[0]) - 1;
 
                 String planet2 = (String) JOptionPane.showInputDialog(null, "Selecciona el segundo planeta",
-                        selection, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
+                        title, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
 
                     int indexPlanet2 = Integer.parseInt(planet2.split(". ")[0]) - 1;
                     
-                    double attraction = calcule.attractionGravitatory(system.get(indexPlanet1).getMass(), system.get(indexPlanet2).getMass(), system.get(indexPlanet2).getDistanceSun());
+                    double attraction = calculate.attractionGravitatory(system.get(indexPlanet1).getMass(), system.get(indexPlanet2).getMass(), system.get(indexPlanet2).getDistanceSun());
                     System.out.println("La atraccion gravitatoria de "+system.get(indexPlanet1).getName()+
                             " y "+system.get(indexPlanet2).getName()+" es de: " + attraction + " N");
+                    JOptionPane.showMessageDialog(null, "La atraccion gravitatoria de "+system.get(indexPlanet1).getName()+
+                            " y "+system.get(indexPlanet2).getName()+" es de: " + attraction + " N", 
+                            title, JOptionPane.INFORMATION_MESSAGE);
                 break;
 
                 case 2:
@@ -86,12 +89,15 @@ public class Ejercicio1 {
                     double sunMass = 1.989 * 10E30;
 
                     String planet = (String) JOptionPane.showInputDialog(null, "Selecciona un planeta",
-                            selection, JOptionPane.QUESTION_MESSAGE, null, option, option[1]);
+                            title, JOptionPane.QUESTION_MESSAGE, null, option, option[1]);
 
                     int indexPlanet = Integer.parseInt(planet.split(". ")[0]) - 1;
-                    double attractions = calcule.attractionGravitatory(system.get(indexPlanet).getMass(), sunMass, system.get(indexPlanet).getDistanceSun());
+                    double attractions = calculate.attractionGravitatory(system.get(indexPlanet).getMass(), sunMass, system.get(indexPlanet).getDistanceSun());
                     System.out.println("La atraccion gravitatoria de "+system.get(indexPlanet).getName()+
                             " y el Sol es de: " + attractions + " N");
+                    JOptionPane.showMessageDialog(null, "La atraccion gravitatoria de "+system.get(indexPlanet).getName()+
+                            " y el Sol es de: " + attractions + " N", 
+                            title, JOptionPane.INFORMATION_MESSAGE);
                 break;
                 default:
                 limit = true;

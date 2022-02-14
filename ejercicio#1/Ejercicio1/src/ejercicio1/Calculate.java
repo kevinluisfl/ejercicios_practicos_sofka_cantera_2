@@ -5,7 +5,7 @@ package ejercicio1;
  *
  * @author kevinf
  */
-public class Calcule {
+public class Calculate {
     
      double gravity = 6.673E-11;
      /**
