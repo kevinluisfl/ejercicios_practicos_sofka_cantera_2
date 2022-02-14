@@ -7,18 +7,18 @@ package ejercicio1;
  */
 public class Calculate {
     
-     double gravity = 6.673E-11;
+     final double gravity = 6.673E-11;
      /**
      * 
-     * @param distanceSun
+     * @param distance
      * @return 
      */
-    public double squareDistance(double distanceSun){
-        return Math.pow(distanceSun, 2);
+    public double squareDistance(double distance){
+        return Math.pow(distance, 2);
     }
     
-    public double attractionGravitatory(double mass1, double mass2, double distanceSun){
-        return gravity * ((mass1 * mass2) / squareDistance(distanceSun));
+    public double attractionGravitatory(double mass1, double mass2, double distance){
+        return gravity * ((mass1 * mass2) / squareDistance(distance));
     }
     
 }

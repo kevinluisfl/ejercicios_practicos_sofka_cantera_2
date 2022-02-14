@@ -55,23 +55,30 @@ public class Ejercicio1 {
 
             switch (selectionMenu + 1) {
                 case 1:
-                String[] options = new String[system.size()];
+                    String[] options = new String[system.size()];
 
-                for (int i = 0; i < system.size(); i++) {
-                    options[i] = system.get(i).getIdentifier() + ". " + system.get(i).getName();
-                }
+                    for (int i = 0; i < system.size(); i++) {
+                        options[i] = system.get(i).getIdentifier() + ". " + system.get(i).getName();
+                    }
 
-                String planet1 = (String) JOptionPane.showInputDialog(null, "Selecciona el primer planeta",
+                    String selectPlanet1 = (String) JOptionPane.showInputDialog(null, "Selecciona el primer planeta",
                         title, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
 
-                    int indexPlanet1 = Integer.parseInt(planet1.split(". ")[0]) - 1;
+                    int indexPlanet1 = Integer.parseInt(selectPlanet1.split(". ")[0]) - 1;
+                
+                    PlanetarySystem planet1 = system.get(indexPlanet1);
 
-                String planet2 = (String) JOptionPane.showInputDialog(null, "Selecciona el segundo planeta",
+                    String selectPlanet2 = (String) JOptionPane.showInputDialog(null, "Selecciona el segundo planeta",
                         title, JOptionPane.QUESTION_MESSAGE, null, options, options[0]);
 
-                    int indexPlanet2 = Integer.parseInt(planet2.split(". ")[0]) - 1;
+                    int indexPlanet2 = Integer.parseInt(selectPlanet2.split(". ")[0]) - 1;
                     
-                    double attraction = calculate.attractionGravitatory(system.get(indexPlanet1).getMass(), system.get(indexPlanet2).getMass(), system.get(indexPlanet2).getDistanceSun());
+                    PlanetarySystem planet2 = system.get(indexPlanet2);
+                    
+                    double distancePlanets = Math.abs(planet1.getDistanceSun() - planet2.getDistanceSun());
+                    
+                    double attraction = calculate.attractionGravitatory(planet1.getMass(), planet2.getMass(), distancePlanets);
+                    
                     System.out.println("La atraccion gravitatoria de "+system.get(indexPlanet1).getName()+
                             " y "+system.get(indexPlanet2).getName()+" es de: " + attraction + " N");
                     JOptionPane.showMessageDialog(null, "La atraccion gravitatoria de "+system.get(indexPlanet1).getName()+
