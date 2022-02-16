@@ -8,6 +8,7 @@ Una interesante clase predefinida en el lenguaje java es la clase Vector,
  */
 package ejercicio6;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.Vector;
 
@@ -50,7 +51,8 @@ public class Ejercicio6 {
             for(int i = 0; i < vector.size(); i++){
                 System.out.print(vector.get(i) + "   "); 
             }
-        }catch(Exception exc){
+        }catch(IndexOutOfBoundsException | NumberFormatException 
+                | InputMismatchException exc){
             System.out.println(exc.getMessage());
         }   
     }
