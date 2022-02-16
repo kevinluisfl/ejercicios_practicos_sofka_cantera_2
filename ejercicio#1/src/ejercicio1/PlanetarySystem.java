@@ -2,18 +2,32 @@
 package ejercicio1;
 
 /**
- *
- * @author kevinf
+ * Reprenseta la clase "PlanetarySystem" usada para crear los astros
+ * @version 1.00.00 2022-02-15
+ * @author Kevin Luis Flórez Lozada.
+ * @since 1.00.00
  */
 public class PlanetarySystem {
+    /**
+     * atributos caracteristicos de los astros a crear
+     */
     private double mass;
     private double density;
-    private int diameter;
+    private double diameter;
     private double distanceSun;
     private int identifier;
     private String name;
 
-    public PlanetarySystem(double mass, double density, int diameter, double distanceSun, int identifier, String name) {
+    /**
+     * constructor de los astros del sistema
+     * @param mass masa tipo double
+     * @param density desidad tipo double
+     * @param diameter diametro tipo double
+     * @param distanceSun distancia al sol tipo double
+     * @param identifier identificador tipo int
+     * @param name  nombre tipo String
+     */
+    public PlanetarySystem(double mass, double density, double diameter, double distanceSun, int identifier, String name) {
         this.mass = mass;
         this.density = density;
         this.diameter = diameter;
@@ -38,11 +52,11 @@ public class PlanetarySystem {
         this.density = density;
     }
 
-    public int getDiameter() {
+    public double getDiameter() {
         return diameter;
     }
 
-    public void setDiameter(int diameter) {
+    public void setDiameter(double diameter) {
         this.diameter = diameter;
     }
 

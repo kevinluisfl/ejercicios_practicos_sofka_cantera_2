@@ -8,7 +8,7 @@
 - Previamente instalado el JDK 8, 16.0.1 
 
 ### Autor
-- Kevin Luis Florez
+- Kevin Luis Florez Lozada - [kevinluisfl](https://github.com/kevinluisfl)
 
 ### Información 
 
