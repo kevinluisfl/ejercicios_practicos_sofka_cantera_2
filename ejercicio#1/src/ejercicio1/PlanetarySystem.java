@@ -2,7 +2,7 @@
 package ejercicio1;
 
 /**
- * Reprenseta la clase "PlanetarySystem" usada para crear los astros
+ * Reprenseta la clase "PlanetarySystem" para crear los astros
  * @version 1.00.00 2022-02-15
  * @author Kevin Luis Flórez Lozada.
  * @since 1.00.00
