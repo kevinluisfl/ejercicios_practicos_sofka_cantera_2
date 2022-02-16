@@ -1,10 +1,16 @@
-
+/**
+ * Ejercicio #3
+ * Escriba un programa en java que genere aleatoriamente 
+ * (Ayuda: Vea la clase Math para saber cómo generar números aleatorios en java)
+ * un array de números reales, y lo ordene mediante el algoritmo de la burbuja 
+ * o mediante quick sort (esto deberá poder elegirlo el usuario).
+ */
 package ejercicio3;
 
 import javax.swing.JOptionPane;
 
 /**
- * Reprenseta la clase principal 
+ * Reprenseta la clase principal
  *
  * @version 1.00.00 2022-02-15
  * @author Kevin Luis Flórez Lozada.
@@ -16,10 +22,10 @@ public class Ejercicio3 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-      
+
         boolean repeat = true;
-        
-        try{
+
+        try {
             /**
              * capturar el numero de numeros que se van a generar aleatoriamente
              * luego el numero máximo posible a generar
@@ -31,7 +37,8 @@ public class Ejercicio3 {
 
             int maxNum = Integer.parseInt(JOptionPane.showInputDialog("Número aleatorio máximo a generar"));
             /**
-             * Se generan los numeros aleatorios y se van almacenando en numbers.
+             * Se generan los numeros aleatorios y se van almacenando en
+             * numbers.
              */
             for (int i = 0; i < numbers.length; i++) {
                 numbers[i] = (Math.random() * maxNum);
@@ -53,17 +60,17 @@ public class Ejercicio3 {
                  * opciones de ordenamiento para que el usuario seleccione.
                  */
                 int selection = JOptionPane.showOptionDialog(null, "¿Que método desea usar?", "Menú",
-                    JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null,
-                    new Object[]{"Ordenar por burbuja", "Ordenar por QuickSort", "Cerrar"}, "opcion 1");
+                        JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null,
+                        new Object[]{"Ordenar por Burbuja", "Ordenar por QuickSort", "Generar aleatorios", "Cerrar"}, "opcion 1");
 
-            /**
-             * switch case para las distintas opciones del menú.
-             */
-                switch (selection+1) {
+                /**
+                 * switch case para las distintas opciones del menú.
+                 */
+                switch (selection + 1) {
 
-            /**
-             * El caso 1 reprenseta el ordenamiento por metodo burbuja.
-             */
+                    /**
+                     * El caso 1 reprenseta el ordenamiento por metodo burbuja.
+                     */
                     case 1:
                         System.out.println("\nOrdenado por el método burbuja");
                         Bubble bubble = new Bubble();
@@ -71,10 +78,11 @@ public class Ejercicio3 {
                         for (int i = 0; i < numbersOrderBu.length; i++) {
                             System.out.println(numbersOrderBu[i]);
                         }
-                        break;
-            /**
-             * El caso 2 representa el ordenamiento por metodo quicksort.
-             */
+                    break;
+                    /**
+                     * El caso 2 representa el ordenamiento por metodo
+                     * quicksort.
+                     */
                     case 2:
                         System.out.println("\nOrdenado por el método quicksort");
                         QuickSort sort = new QuickSort();
@@ -82,14 +90,30 @@ public class Ejercicio3 {
                         for (int i = 0; i < numbersOrderQuick.length; i++) {
                             System.out.println(numbersOrderQuick[i]);
                         }
-                        break;
+                    break;
+                    case 3:
+                        /**
+                         * Se generan los numeros aleatorios nuevamente
+                         * 
+                         */
+                        for (int i = 0; i < numbers.length; i++) {
+                            numbers[i] = (Math.random() * maxNum);
+                        }
+                        /**
+                         * Imprime por consola los nuevos números generados 
+                         */
+                        System.out.println("\nNúmeros generados");
+                        for (int i = 0; i < numbers.length; i++) {
+                            System.out.println(numbers[i]);
+                        }
+                    break;
                     default:
                         repeat = false;
                 }
             }
-        }catch(NullPointerException | IndexOutOfBoundsException | NumberFormatException exc){
+        } catch (NullPointerException | IndexOutOfBoundsException | NumberFormatException exc) {
             System.out.println(exc.getMessage());
         }
     }
-    
+
 }
