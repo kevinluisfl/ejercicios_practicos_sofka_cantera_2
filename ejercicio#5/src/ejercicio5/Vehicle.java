@@ -145,7 +145,7 @@ public class Vehicle {
      */
     @Override
     public String toString() {
-        return "Vehiculo{" +
+        return "\nVehiculo{" +
                 "Número de pasajeros = " + getnPassengers() +
                 ", Tripulación = " + getTripulation() +
                 ", Número de ruedas = " + getnWheels() +

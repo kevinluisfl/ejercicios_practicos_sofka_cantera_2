@@ -40,13 +40,13 @@ public class Motorcycle extends Vehicle {
 
     @Override
     public String toString() {
-        return "Motorcycle{" +
-                ", Número de pasajeros=" + getnPassengers() +
-                ", Tripulación=" + getTripulation() +
-                ", Número de ruedas=" + getnWheels() +
-                ", Fecha de matricula='" + formatDate() + '\'' +
-                ", Se desplaza por='" + getScrolling() + '\'' +
-                "scalapie=" + getScalapie() +
+        return "Moto{" +
+                ", Número de pasajeros = " + getnPassengers() +
+                ", Tripulación = " + getTripulation() +
+                ", Número de ruedas = " + getnWheels() +
+                ", Fecha de matricula = '" + formatDate() + '\'' +
+                ", Se desplaza por = '" + getScrolling() + '\'' +
+                "scalapie = " + getScalapie() +
                 "}\n";
     }
 }

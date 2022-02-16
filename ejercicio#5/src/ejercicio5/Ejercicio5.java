@@ -72,8 +72,10 @@ public class Ejercicio5 {
 
                         while (repeatVehicle && (quantityVehicle < 10)) {
                             
-                            System.out.print("\n:::Tipo Vehiculo a crear:::\n1. Bicicleta\n2. Lancha\n3. Carro\n4. Moto\n5. Camion\nEscriba el tipo vehiculo a crear");
-                            int decision = scan.nextInt();
+                            System.out.print("\n:::Tipo Vehiculo a crear:::\n1. "
+                                    + "Bicicleta\n2. Lancha\n3. Carro\n4. Moto\n"
+                                    + "5. Camion\n6. Otro\nEscriba el tipo vehiculo a crear: ");
+                            int decisionType = scan.nextInt();
                             
                             System.out.println("\nA continuación ingrese los datos del vehiculo " + (quantityVehicle + 1));
 
@@ -97,7 +99,7 @@ public class Ejercicio5 {
                             System.out.print("Medio desplazamiento(Aire, Tierra, Agua): ");
                             scrolling = scan.next();
                             
-                            switch(decision){
+                            switch(decisionType){
                                 case 1:
                                     /**
                                      * caso bicicleta
@@ -201,35 +203,54 @@ public class Ejercicio5 {
                     case 2:
                         System.out.println("\n:::::::Vehiculos registrados:::::::");
                         boolean repeatList = true;
+                        while(repeatList){
+                            System.out.println("\n:::Tipo Vehiculo a Listar:::\n1. Bicicletas\n2. Lanchas\n"
+                                    + "3. Carros\n4. Motos\n5. Camiones\n6. Otros\n7. Todos\n8. Salir\n"
+                                    + "Escriba opcion a visualizar: ");
+                            int decisionList = scan.nextInt();
                         
-                        if(!vehicles.isEmpty()){
-                            System.out.println("Vehiculos general:");
-                            System.out.println(vehicles);
-                        }
-                        
-                        if(!bikes.isEmpty()){
-                            System.out.println("Bicicletas:");
-                                System.out.println(bikes);
-                        }
-                        
-                        if(!boats.isEmpty()){
-                            System.out.println("Lanchas:");
-                            System.out.println(boats);
-                        }
-                        
-                        if(!cars.isEmpty()){
-                            System.out.println("Carros:");
-                                System.out.println(cars);
-                        }
-
-                        if(!motorcycles.isEmpty()){
-                            System.out.println("Motos:");
-                                System.out.println(motorcycles);
-                        }
-
-                        if(!trucks.isEmpty()){
-                            System.out.println("Camiones:");
-                                System.out.println(trucks);
+                            switch(decisionList){
+                                case 1:
+                                    System.out.println("\nBicicletas:");
+                                    System.out.print(!bikes.isEmpty() 
+                                    ? bikes : "No hay bicicletas registradas\n");
+                                    break;
+                                case 2:
+                                    System.out.println("\nLanchas:");
+                                    System.out.print(!boats.isEmpty() 
+                                    ? boats : "No hay lanchas registradas\n");
+                                    break;
+                                case 3:
+                                    System.out.println("\nCarros:");
+                                    System.out.print(!cars.isEmpty() 
+                                    ? cars : "No hay carros registrados\n");
+                                    break;
+                                case 4:
+                                    System.out.println("\nMotos:");
+                                    System.out.print(!motorcycles.isEmpty() 
+                                    ? motorcycles : "No hay motos registradas\n");
+                                    break;
+                                case 5:
+                                    System.out.println("\nCamiones:");
+                                    System.out.print(!trucks.isEmpty() 
+                                    ? trucks : "No hay camiones registrados\n");
+                                    break;
+                                case 6:
+                                    System.out.println("\nVehiculos general:");
+                                    System.out.print(!vehicles.isEmpty() 
+                                    ? vehicles : "No hay vehiculos default registrados\n");
+                                    break;
+                                case 7:
+                                    System.out.print(!bikes.isEmpty() ? bikes : "");
+                                    System.out.print(!boats.isEmpty() ? boats : "");
+                                    System.out.print(!cars.isEmpty() ? cars : "");
+                                    System.out.print(!motorcycles.isEmpty() ? motorcycles : "");
+                                    System.out.print(!trucks.isEmpty() ? trucks : "");
+                                    System.out.print(!vehicles.isEmpty() ? vehicles : "");
+                                    break;
+                                default:
+                                    repeatList = false;
+                            }
                         }
                         break;
 

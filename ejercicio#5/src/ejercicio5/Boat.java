@@ -40,13 +40,13 @@ public class Boat extends Vehicle{
 
     @Override
     public String toString() {
-        return "Boat{" +
-                ", Número de pasajeros=" + getnPassengers() +
-                ", Tripulación=" + getTripulation() +
-                ", Número de ruedas=" + getnWheels() +
-                ", Fecha de matricula='" + formatDate() + '\'' +
-                ", Se desplaza por='" + getScrolling() + '\'' +
-                "anchors=" + getAnchors() +
+        return "Lancha{" +
+                ", Número de pasajeros = " + getnPassengers() +
+                ", Tripulación = " + getTripulation() +
+                ", Número de ruedas = " + getnWheels() +
+                ", Fecha de matricula = '" + formatDate() + '\'' +
+                ", Se desplaza por = '" + getScrolling() + '\'' +
+                "anchors = " + getAnchors() +
                 "}\n";
     }
 }

@@ -40,13 +40,13 @@ public class Bike extends Vehicle {
 
     @Override
     public String toString() {
-        return "Bicycle{" +
-                ", Número de pasajeros=" + getnPassengers() +
-                ", Tripulación=" + getTripulation() +
-                ", Número de ruedas=" + getnWheels() +
-                ", Fecha de matricula='" + formatDate() + '\'' +
-                ", Se desplaza por='" + getScrolling() + '\'' +
-                "pedal=" + getPedal() +
+        return "\nBicicleta{" +
+                ", Número de pasajeros = " + getnPassengers() +
+                ", Tripulación = " + getTripulation() +
+                ", Número de ruedas = " + getnWheels() +
+                ", Fecha de matricula = '" + formatDate() + '\'' +
+                ", Se desplaza por = '" + getScrolling() + '\'' +
+                "pedal = " + getPedal() +
                 "}\n";
     }
 }

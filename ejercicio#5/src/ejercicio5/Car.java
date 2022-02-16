@@ -40,13 +40,13 @@ public class Car extends Vehicle {
 
     @Override
     public String toString() {
-        return "Car{" +
-                ", Número de pasajeros=" + getnPassengers() +
-                ", Tripulación=" + getTripulation() +
-                ", Número de ruedas=" + getnWheels() +
-                ", Fecha de matricula='" + formatDate() + '\'' +
-                ", Se desplaza por='" + getScrolling() + '\'' +
-                "doors=" + getDoors() +
+        return "Carro{" +
+                ", Número de pasajeros = " + getnPassengers() +
+                ", Tripulación = " + getTripulation() +
+                ", Número de ruedas = " + getnWheels() +
+                ", Fecha de matricula = '" + formatDate() + '\'' +
+                ", Se desplaza por = '" + getScrolling() + '\'' +
+                "doors = " + getDoors() +
                 "}\n";
     }
 }

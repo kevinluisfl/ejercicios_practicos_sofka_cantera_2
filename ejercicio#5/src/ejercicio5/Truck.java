@@ -40,13 +40,13 @@ public class Truck extends Vehicle{
 
     @Override
     public String toString() {
-        return "Truck{" +
-                ", Número de pasajeros=" + getnPassengers() +
-                ", Tripulación=" + getTripulation() +
-                ", Número de ruedas=" + getnWheels() +
-                ", Fecha de matricula='" + formatDate() + '\'' +
-                ", Se desplaza por='" + getScrolling() + '\'' +
-                "trailer=" + getTrailer() +
+        return "Camion{" +
+                ", Número de pasajeros = " + getnPassengers() +
+                ", Tripulación = " + getTripulation() +
+                ", Número de ruedas = " + getnWheels() +
+                ", Fecha de matricula = '" + formatDate() + '\'' +
+                ", Se desplaza por = '" + getScrolling() + '\'' +
+                "trailer = " + getTrailer() +
                 "}\n";
     }
 }
