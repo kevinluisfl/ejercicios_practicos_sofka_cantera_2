@@ -36,50 +36,98 @@ public class PlanetarySystem {
         this.name = name;
     }
 
+    /**
+     * getter mass
+     * @return mass tipo double
+     */
     public double getMass() {
         return mass;
     }
 
+    /**
+     * setter mass
+     * @param mass tipo double 
+     */
     public void setMass(double mass) {
         this.mass = mass;
     }
 
+    /**
+     * getter density
+     * @return density tipo double
+     */
     public double getDensity() {
         return density;
     }
 
+    /**
+     * setter density
+     * @param density tipo double
+     */
     public void setDensity(double density) {
         this.density = density;
     }
 
+    /**
+     * getter diameter
+     * @return diameter tipo double
+     */
     public double getDiameter() {
         return diameter;
     }
 
+    /**
+     * setter diameter
+     * @param diameter tipo double 
+     */
     public void setDiameter(double diameter) {
         this.diameter = diameter;
     }
 
+    /**
+     * getter distanceSun
+     * @return distanceSun tipo double 
+     */
     public double getDistanceSun() {
         return distanceSun;
     }
 
+    /**
+     * setter distanceSun
+     * @param distanceSun tipo double 
+     */
     public void setDistanceSun(double distanceSun) {
         this.distanceSun = distanceSun;
     }
 
+    /**
+     * getter identifier
+     * @return identifier tipo int
+     */
     public int getIdentifier() {
         return identifier;
     }
 
+    /**
+     * setter identifier
+     * @param identifier tipo int
+     */
     public void setIdentifier(int identifier) {
         this.identifier = identifier;
     }
 
+    /**
+     * getter name
+     * @return name tipo String
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * setter name
+     * @param name tipo String 
+     */
     public void setName(String name) {
         this.name = name;
     }
