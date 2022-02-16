@@ -78,9 +78,9 @@ public class Ejercicio3 {
                     case 2:
                         System.out.println("\nOrdenado por el método quicksort");
                         QuickSort sort = new QuickSort();
-                        double[] elementOrderQuick = sort.orderQuickSort(numbers);
-                        for (int i = 0; i < elementOrderQuick.length; i++) {
-                            System.out.println(elementOrderQuick[i]);
+                        double[] numbersOrderQuick = sort.orderQuickSort(numbers);
+                        for (int i = 0; i < numbersOrderQuick.length; i++) {
+                            System.out.println(numbersOrderQuick[i]);
                         }
                         break;
                     default:

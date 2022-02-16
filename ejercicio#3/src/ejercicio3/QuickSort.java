@@ -24,10 +24,10 @@ public class QuickSort {
      * método que realiza el ordenamiento recibiendo un listado y dos posiciones
      * para realizar las comparaciones
      *
-     * @param numbers
-     * @param left
-     * @param right
-     * @return
+     * @param numbers listado de numeros
+     * @param left limite izquierdo del rango
+     * @param right limite derecho del rango
+     * @return numeros ordenados
      */
     public double[] quicksort(double[] numbers, int left, int right) {
         if (left >= right) {
