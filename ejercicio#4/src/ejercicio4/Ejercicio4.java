@@ -111,9 +111,11 @@ public class Ejercicio4 {
 
                     case 2:
                         System.out.println("\nVehiculos registrados...");
-                        vehicles.forEach((vehicle) -> {
-                            System.out.println(vehicle);
-                        });
+                        if(!vehicles.isEmpty()){
+                            System.out.println(vehicles);
+                        }else{
+                            System.out.println("No hay vehiculos registrados");
+                        }
                         break;
 
                     case 3:
