@@ -8,6 +8,9 @@ Una interesante clase predefinida en el lenguaje java es la clase Vector,
  */
 package ejercicio6;
 
+import java.util.Scanner;
+import java.util.Vector;
+
 /**
  * Reprenseta la clase principal 
  *
@@ -21,7 +24,35 @@ public class Ejercicio6 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Vector vector = new Vector();
+        Scanner scan = new Scanner(System.in);
+        float beforeNumber = 0;
+        boolean repeat = true;
+        
+        try{
+         
+            System.out.println("El programa pide números para almacenar en un vector\n"
+                    + "Cuando escriba un mismo número seguido, el programa se detiene\n"
+                    + "Luego muestra todos los numeros que se ingresaron.\n");
+            while(repeat){
+                System.out.print("Ingrese número: ");
+                float currentNumber = scan.nextFloat();
+                vector.add(currentNumber);
+                if((vector.size() > 1) && (currentNumber == beforeNumber)){
+                    System.out.println("Números consecutivos repetidos...\n");
+                    repeat = false;
+                }else{
+                    beforeNumber = currentNumber;
+                }
+            }
+
+            System.out.println("Números ingresados: ");
+            for(int i = 0; i < vector.size(); i++){
+                System.out.print(vector.get(i) + "   "); 
+            }
+        }catch(Exception exc){
+            System.out.println(exc.getMessage());
+        }   
     }
     
 }
