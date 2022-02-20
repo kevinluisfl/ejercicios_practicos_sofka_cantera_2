@@ -71,33 +71,36 @@ public class Ejercicio5 {
                         char anotherVehicle;
 
                         while (repeatVehicle && (quantityVehicle < 10)) {
-                            
-                            System.out.print("\n:::Tipo Vehiculo a crear:::\n1. "
+                            int decisionType;
+                            do{
+                                System.out.print("\n:::Tipo Vehiculo a crear:::\n1. "
                                     + "Bicicleta\n2. Lancha\n3. Carro\n4. Moto\n"
-                                    + "5. Camion\n6. Otro\nEscriba el tipo vehiculo a crear: ");
-                            int decisionType = scan.nextInt();
+                                    + "5. Camion\n6. Otro\n7. Salir\nEscriba el tipo vehiculo a crear: ");
+                                decisionType = scan.nextInt();
+                            }while(decisionType < 0 || decisionType > 7);
                             
-                            System.out.println("\nA continuación ingrese los datos del vehiculo " + (quantityVehicle + 1));
+                            if(decisionType !=7){
+                                System.out.println("\nA continuación ingrese los datos del vehiculo " + (quantityVehicle + 1));
 
-                            System.out.print("Número de pasajeros: ");
-                            nPassengers = scan.nextInt();
+                                System.out.print("Número de pasajeros: ");
+                                nPassengers = scan.nextInt();
 
-                            System.out.print("¿Tiene tripulacion?. Escriba S o N: ");
-                            tripulations = scan.next().toUpperCase().charAt(0);
+                                System.out.print("¿Tiene tripulacion?. Escriba S o N: ");
+                                tripulations = scan.next().toUpperCase().charAt(0);
 
-                            if (tripulations == 'S') {
-                                tripulation = true;
-                            } 
+                                if (tripulations == 'S') {
+                                    tripulation = true;
+                                } 
 
-                            System.out.print("Número de ruedas: ");
-                            nWheels = scan.nextInt();
+                                System.out.print("Número de ruedas: ");
+                                nWheels = scan.nextInt();
 
-                            System.out.print("Introduzca la fecha con formato DD/MM/YYYY: ");
-                            dateRegistration = scan.next();
-                            Date date = df.parse(dateRegistration);
+                                System.out.print("Introduzca la fecha con formato DD/MM/YYYY: ");
+                                dateRegistration = scan.next();
+                                Date date = df.parse(dateRegistration);
 
-                            System.out.print("Medio desplazamiento(Aire, Tierra, Agua): ");
-                            scrolling = scan.next();
+                                System.out.print("Medio desplazamiento(Aire, Tierra, Agua): ");
+                                scrolling = scan.next();
                             
                             switch(decisionType){
                                 case 1:
@@ -175,13 +178,16 @@ public class Ejercicio5 {
                                             date, scrolling, trailers);
                                     trucks.add(truck);
                                     break;
-                                default:
+                                case 6:
                                     /**
                                      * caso default vehiculo general
                                      */
                                     Vehicle vehicle = new Vehicle(nPassengers, tripulation, nWheels,
                                     date, scrolling);
                                     vehicles.add(vehicle);
+                                    break;
+                                default:
+                                    repeatVehicle = false;
                             }
 
                             quantityVehicle += 1;
@@ -196,6 +202,9 @@ public class Ejercicio5 {
                                 if (anotherVehicle != 'S') {
                                     repeatVehicle = false;
                                 }
+                            }
+                            }else{
+                                repeatVehicle = false;
                             }
                         }
                         break;
